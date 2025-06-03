@@ -190,40 +190,65 @@ td {
   text-align: center;
 }
 
-@media (max-width: 650px) {
-  td {
-    display: grid;
-    gap: 2.5rem;
-    grid-template-columns: 1fr 1fr;
-    padding: 2rem 2rem;
-  }
-  td::before {
-    content: attr(data-cell);
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: capitalize;
-    padding: 0.5rem 1rem;
-  }
-  td:nth-of-type(1)::before {
-    background: #e3f4df;
-  }
-  td:nth-of-type(2)::before {
-    background: #e5f4fb;
-  }
-  td:nth-of-type(3)::before {
-    background: #fffaee;
-  }
-  td:first-child,
-  td:last-child {
-    padding-top: 2rem;
-  }
-  th {
-    display: none;
-  }
-}
 td[data-label=Categoria] {
   background: #f5fab6;
   color: black;
+}
+
+/* ---------------- Responsividade ---------------- */
+@media (max-width: 650px) {
+  table {
+    border: 0;
+    box-shadow: none;
+  }
+  thead {
+    display: none;
+  }
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 250px;
+  }
+  tr {
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: none;
+    padding: 1rem;
+  }
+  td {
+    position: relative;
+    text-align: left;
+    border-bottom: 1px dashed #ccc;
+  }
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 10px;
+    transform: translateY(-60%);
+    font-weight: bold;
+    color: #000;
+    width: 45%;
+    white-space: nowrap;
+  }
+  td:last-child {
+    border-bottom: none;
+  }
+  #wrapper {
+    font-size: 20px;
+    line-height: 1.2em;
+  }
+  #title span {
+    font-size: 20px;
+    line-height: 1.2em;
+    transition: none;
+  }
+  #title span:hover {
+    font-size: 30px;
+    line-height: 1.2em;
+    transition: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
