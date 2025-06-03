@@ -226,4 +226,60 @@ td[data-label=Categoria] {
   color: black;
 }
 
+/* ---------------- Responsividade ---------------- */
+@media (max-width: 650px) {
+  table {
+    border: 0;
+    box-shadow: none;
+  }
+  thead {
+    display: none;
+  }
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 250px;
+  }
+  tr {
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: none;
+    padding: 1rem;
+  }
+  td {
+    position: relative;
+    text-align: left;
+    border-bottom: 1px dashed #ccc;
+  }
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 10px;
+    transform: translateY(-60%);
+    font-weight: bold;
+    color: #000;
+    width: 45%;
+    white-space: nowrap;
+  }
+  td:last-child {
+    border-bottom: none;
+  }
+  #wrapper {
+    font-size: 20px;
+    line-height: 1.2em;
+  }
+  #title span {
+    font-size: 20px;
+    line-height: 1.2em;
+    transition: none;
+  }
+  #title span:hover {
+    font-size: 30px;
+    line-height: 1.2em;
+    transition: none;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
